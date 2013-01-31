@@ -174,9 +174,9 @@ $app_name = idx($app_info, 'name', '');
 
     function _showSchedule(schedule){
       var programmes=schedule.schedule.day.broadcasts;
-      console.log("Programme",programmes);
       $("#r1Schedule").empty();
       //id=programmes [i]
+      console.log("schedule", schedule);
       var i = 0;
       var programmeActual = programmes[0];
 
@@ -270,7 +270,7 @@ $app_name = idx($app_info, 'name', '');
             url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
 
             success : function (data) {
-                console.log("schedule",data);
+               // console.log("schedule",data);
                 _showSchedule(data);    
             }
         });
@@ -369,17 +369,18 @@ $app_name = idx($app_info, 'name', '');
 
 
     <section id="schedules" class="clearfix">
-      <h1>Schedules</h1>
+      <div style="margin-left:40px">
+        <h1>Schedules</h1>
 
-      <div class="list">
-        <h3>Radio1 Programmes</h3>
-      </br>
-        <ul class="things" id="r1Schedule">
-          
-        </ul>
-      </div>
+        <div class="list">
+          <h3>Radio1 Programmes</h3>
+        </br>
+          <ul class="things" id="r1Schedule">
+            
+          </ul>
+        </div>
 
-       
+       </div>
 
       
 
