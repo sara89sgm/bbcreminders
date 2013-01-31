@@ -214,11 +214,10 @@ $app_name = idx($app_info, 'name', '');
          
         reminder.save(null, {
           success: function(gameScore) {
-            // The object was saved successfully.
+            alert("sucess");
           },
           error: function(gameScore, error) {
-            // The save failed.
-            // error is a Parse.Error with an error code and description.
+       alert("error");
           }
       });
     }
