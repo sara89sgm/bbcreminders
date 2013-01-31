@@ -196,8 +196,8 @@ $app_name = idx($app_info, 'name', '');
     }
 
     function _storeReminder(id){
-        var Reminder2 = Parse.Object.extend("Reminder2");
-        var reminder = new Reminder2();
+        var Reminder = Parse.Object.extend("Reminder2");
+        var reminder = new Reminder();
          console.log("id", id);
          //var title= "#"+id+" .title";
          var title = $('#reminder-' + id + ' .title');
