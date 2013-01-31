@@ -178,12 +178,13 @@ $app_name = idx($app_info, 'name', '');
       $("#r1Schedule").empty();
       //id=programmes [i]
       var i = 0;
-      var programme = programmes[0];
+      var programmeActual = programmes[0];
 
       while(((typeof(programme)) != 'undefined')){
-        $("#r1Schedule").append(''+programme.programme.programme.title);
+        $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'
+          +programmeActual.programme.programme.title+'</a></li>');
         i++;
-        programme = programmes[i];
+        programmeActual = programmes[i];
       }
       
 
