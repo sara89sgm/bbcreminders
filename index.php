@@ -183,7 +183,10 @@ $app_name = idx($app_info, 'name', '');
       while(((typeof(programmeActual)) != 'undefined')){
 
         console.log('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
-        $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
+        $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p></br>'+
+          '<p class="service">'+schedule.schedule.service.key+'</p>'+
+          '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
+          '<p class="start">'+programmeActual.start+'</p></li>');
         i++;
         programmeActual = programmes[i];
       }
@@ -195,13 +198,17 @@ $app_name = idx($app_info, 'name', '');
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
          
+         var title= $("#"+id+" .title");
+         var start= $("#"+id+" .start");
+         var description = $("#"+id+" .description");
+         var service = $("#"+id+" .service");
         reminder.set("pid", id);
-        reminder.set("title", "Sean Plott");
-        reminder.set("service", false);
-        reminder.set("description", "ddd");
-        reminder.set("action", "dd");
-        reminder.set("target", "");
-        reminder.set("start", 3333333);
+        reminder.set("title", title);
+        reminder.set("service", service) ;
+        reminder.set("description", description);
+        reminder.set("action", "Available to Listen Live");
+        reminder.set("target", "http://www.bbc.co.uk/programmes/"+id);
+        reminder.set("start", start);
          
         reminder.save(null, {
           success: function(gameScore) {
