@@ -199,9 +199,9 @@ $app_name = idx($app_info, 'name', '');
          
          //var title= "#"+id+" .title";
          var title = $('#reminder-' + id + ' .title');
-         var start= $("#"+id+" .start");
-         var description = $("#"+id+" .description");
-         var service = $("#"+id+" .service");
+         var start= $("#reminder-"+id+" .start");
+         var description = $("#reminder-"+id+" .description");
+         var service = $("#reminder-"+id+" .service");
         reminder.set("pid", id);
         reminder.set("title", title);
         reminder.set("service", service) ;
