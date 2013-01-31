@@ -181,6 +181,8 @@ $app_name = idx($app_info, 'name', '');
       var programmeActual = programmes[0];
 
       while(((typeof(programme)) != 'undefined')){
+
+        console.log('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
         $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
         i++;
         programmeActual = programmes[i];
