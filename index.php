@@ -176,7 +176,7 @@ $app_name = idx($app_info, 'name', '');
       var programmes=schedule.schedule.day.broadcasts;
       $("#r1Schedule").empty();
       //id=programmes [i]
-      console.log("schedule", schedule);
+      console.log("here");
       var i = 0;
       var programmeActual = programmes[0];
 
