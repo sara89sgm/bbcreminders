@@ -374,44 +374,9 @@ $app_name = idx($app_info, 'name', '');
       <div class="list">
         <h3>Radio1 Programmes</h3>
       </br>
-        <ul id="tier1-item-list" class="t1-item-list-sub">
-
-    <li class="t1-item t1-sub-promo-1">
-        <a class="t1-item-a" href="/programmes/b01q98rs" style="background: url(http://ichef.bbci.co.uk/images/ic/224x126/legacy/episode/b01q98rs.jpg?nodefault=true) top left no-repeat;"  
- data-istats="counter=tier1_item1_link1_normal::object_type=Next::object_name=5 live Drive::object_media=Episode::object_url=/programmes/b01q98rs">
-
-            <div class="t1-meta-wrap">
-                <div class="t1-meta ">
-                    <div class="t1-meta-img">
-                        <img alt="Click Link " src="http://static.bbci.co.uk/radio/200/1.4.2.2/img/icons/t1_link.png" />
-                        <span>180 mins</span>
-                    </div>
-                    <p class="t1-attr">Episode</p>
-                    <p>Anna Foster and Peter Allen with news, sport, interviews and regular travel updates.</p> 
-                </div>
-                <p class="t1-info">Next<span class="t1-info-time">16:00 - 19:00</span></p>
-            </div>
-
-            <div class="t1-block">
-                <p class="t1-title"><span class="item-title-inline-1">5 live Drive</span><span class="item-title-inline-2">31/01/2013</span></p> 
-            </div>
-        </a>
-
-        <div class="fav-actions-container">
-            <div class="fav-actions">
-                <form class='remindme-form'>
-                    <input type="hidden" name="pid" value="b01q98rq" class="fav-pid">
-                    <input type="hidden" name="title" value="Richard Bacon" class="fav-pid">
-                    <input type="hidden" name="service" value="5live" class="fav-pid">
-                    <input type="hidden" name="description" value="Richard Bacon talks a bit" class="fav-pid">
-                    <input type="hidden" name="action" value="On air now" class="fav-pid">
-                    <input type="hidden" name="target" value="http://www.bbc.co.uk/programmes/b01q98rq" class="fav-pid">
-                    <button type='button' class='fav-add'>Remind Me</button>
-                </form>
-            </div>
-        </div>
-    </li>
-</ul>
+        <ul class="things" id="r1Schedule">
+          
+        </ul>
       </div>
 
        
