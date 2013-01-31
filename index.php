@@ -180,12 +180,14 @@ $app_name = idx($app_info, 'name', '');
       var i = 0;
       var programmeActual = programmes[0];
 
+      var method="_storeReminder('"+programmeActual.programme.pid+"') ";
+
       while(((typeof(programmeActual)) != 'undefined')){
          $("#r1Schedule").append('<li id="remider-'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p>'+
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
           '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
           '<p class="start">'+programmeActual.start+'</p>'+
-          '<a onclick="_storeReminder("'+programmeActual.programme.pid+'"")">Remind me!</a></li></br>');
+          '<a onclick="'+method+'">Remind me!</a></li></br>');
         i++;
         programmeActual = programmes[i];
       }
