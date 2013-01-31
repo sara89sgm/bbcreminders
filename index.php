@@ -166,6 +166,11 @@ $app_name = idx($app_info, 'name', '');
         });
       });
 
+  </script>
+
+  <script type="text/javascript">
+
+
     Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
      
 
@@ -174,7 +179,7 @@ $app_name = idx($app_info, 'name', '');
       console.log("Programme",programmes);
       $("#r1Schedule").append(''+programmes[0].programme.programme.title);
 
-    }
+    };
 
     _storeReminder = function(id){
         var Reminder = Parse.Object.extend("Reminder");
@@ -197,7 +202,7 @@ $app_name = idx($app_info, 'name', '');
             // error is a Parse.Error with an error code and description.
           }
       });
-    }
+    };
 
     </script>
 
