@@ -107,7 +107,7 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-
+    <script src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
     <script type="text/javascript">
       function logResponse(response) {
         if (console && console.log) {
@@ -167,11 +167,34 @@ $app_name = idx($app_info, 'name', '');
 
     _showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
-      console.log(programmes);
+      console.log("Programme",programmes);
       var sched = $("#r1Schedule");
       sched.append('<li><a href="#" target="_top">'+programmes[0].programme.programme.title
         +'</a></li>');
 
+    }
+
+    _storeReminder = function(id){
+        var Reminder = Parse.Object.extend("Reminder");
+        var reminder = new Reminder();
+         
+        reminder.set("pid", id);
+        reminder.set("title", "Sean Plott");
+        reminder.set("service", false);
+        reminder.set("description", "ddd");
+        reminder.set("action", "dd");
+        reminder.set("target", "");
+        reminder.set("start", 3333333);
+         
+        reminder.save(null, {
+          success: function(gameScore) {
+            // The object was saved successfully.
+          },
+          error: function(gameScore, error) {
+            // The save failed.
+            // error is a Parse.Error with an error code and description.
+          }
+});
     }
     </script>
 
@@ -207,10 +230,11 @@ $app_name = idx($app_info, 'name', '');
         });
 
         FB.Canvas.setAutoGrow();
+
       };
 
       window.bbcScheduleInit = function() {
-
+        Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
 
         //Radio 1
         $.ajax({
