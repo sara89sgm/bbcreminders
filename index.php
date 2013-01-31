@@ -186,7 +186,8 @@ $app_name = idx($app_info, 'name', '');
         $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p></br>'+
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
           '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
-          '<p class="start">'+programmeActual.start+'</p></li>');
+          '<p class="start">'+programmeActual.start+'</p>'+
+          '<a onclick="_storeReminder('+programmeActual.programme.pid+')">Remind me!</a></li></br>');
         i++;
         programmeActual = programmes[i];
       }
@@ -371,6 +372,7 @@ $app_name = idx($app_info, 'name', '');
 
       <div class="list">
         <h3>Radio1 Programmes</h3>
+      </br>
         <ul class="things" id="r1Schedule">
           
         </ul>
