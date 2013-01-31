@@ -314,11 +314,11 @@ $app_name = idx($app_info, 'name', '');
 
 
     <section id="schedules" class="clearfix">
-      <h1>Radio 1</h1>
+      <h1>Schedules</h1>
 
       <div class="list">
         <h3>Radio1 Programmes</h3>
-        <ul class="r1Schedule">
+        <ul class="things">
           
         </ul>
       </div>
