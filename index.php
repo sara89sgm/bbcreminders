@@ -350,31 +350,12 @@ $app_name = idx($app_info, 'name', '');
 
       <div class="list">
         <h3>Radio1 Programmes</h3>
-        <ul class="things" id="radio1Schedule">
+        <ul class="things" id="r1Schedule">
           
         </ul>
       </div>
 
-       <div class="list">
-        <h3>Radio1 Programmes</h3>
-        <ul class="things" id="radio2Schedule">
-          
-        </ul>
-      </div>
-
-       <div class="list">
-        <h3>Radio1 Programmes</h3>
-        <ul class="things" id="radio3Schedule">
-          
-        </ul>
-      </div>
-
-       <div class="list">
-        <h3>Radio1 Programmes</h3>
-        <ul class="things" id="radio4Schedule">
-          
-        </ul>
-      </div>
+       
 
       
 
