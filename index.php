@@ -109,6 +109,7 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
     <script type="text/javascript">
+     Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       function logResponse(response) {
         if (console && console.log) {
           console.log('The response was', response);
@@ -234,7 +235,7 @@ $app_name = idx($app_info, 'name', '');
       };
 
       window.bbcScheduleInit = function() {
-        Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
+       
 
         //Radio 1
         $.ajax({
