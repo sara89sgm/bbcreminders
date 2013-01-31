@@ -209,7 +209,7 @@ $app_name = idx($app_info, 'name', '');
 
         //Radio 1
         $.ajax({
-            url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
+            url : "http://www.bbc.co.uk/radio2/programmes/schedules/england.json",
 
             success : function (data) {
                 console.log("schedule",data);
@@ -220,7 +220,7 @@ $app_name = idx($app_info, 'name', '');
         //Radio 2
 
         $.ajax({
-            url : "http://www.bbc.co.uk/radio2/programmes/schedules/england.json",
+            url : "http://www.bbc.co.uk/radio2/programmes/schedules.json",
 
             success : function (data) {
                 console.log("schedule",data);
@@ -230,7 +230,7 @@ $app_name = idx($app_info, 'name', '');
 
         //Radio 3
         $.ajax({
-            url : "http://www.bbc.co.uk/radio3/programmes/schedules/england.json",
+            url : "http://www.bbc.co.uk/radio3/programmes/schedules.json",
 
             success : function (data) {
                 console.log("schedule",data);
@@ -242,7 +242,7 @@ $app_name = idx($app_info, 'name', '');
         //Radio 4
 
         $.ajax({
-            url : "http://www.bbc.co.uk/radio4/programmes/schedules/england.json",
+            url : "http://www.bbc.co.uk/radio4/programmes/schedules.json",
 
             success : function (data) {
                 console.log("schedule",data);
