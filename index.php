@@ -185,7 +185,7 @@ $app_name = idx($app_info, 'name', '');
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
           '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
           '<p class="start">'+programmeActual.start+'</p>'+
-          '<a onclick="_storeReminder('+programmeActual.programme.pid+')">Remind me!</a></li></br>');
+          '<a onclick="_storeReminder("'+programmeActual.programme.pid+'"")">Remind me!</a></li></br>');
         i++;
         programmeActual = programmes[i];
       }
