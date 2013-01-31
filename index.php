@@ -206,6 +206,8 @@ $app_name = idx($app_info, 'name', '');
 
       window.bbcScheduleInit = function() {
 
+
+        //Radio 1
         $.ajax({
             url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
 
@@ -214,6 +216,40 @@ $app_name = idx($app_info, 'name', '');
                 _showSchedule(data);    
             }
         });
+
+        //Radio 2
+
+        $.ajax({
+            url : "http://www.bbc.co.uk/radio2/programmes/schedules/england.json",
+
+            success : function (data) {
+                console.log("schedule",data);
+                _showSchedule(data);    
+            }
+        });
+
+        //Radio 3
+        $.ajax({
+            url : "http://www.bbc.co.uk/radio3/programmes/schedules/england.json",
+
+            success : function (data) {
+                console.log("schedule",data);
+                _showSchedule(data);    
+            }
+        });
+
+
+        //Radio 4
+
+        $.ajax({
+            url : "http://www.bbc.co.uk/radio4/programmes/schedules/england.json",
+
+            success : function (data) {
+                console.log("schedule",data);
+                _showSchedule(data);    
+            }
+        });
+
       }
 
       // Load the SDK Asynchronously
