@@ -167,13 +167,9 @@ $app_name = idx($app_info, 'name', '');
 
     _showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
-      var $sched = $("r1Schedule");
-      $sched.append(
-         ' <li>
-            <a href="#" target="_top">
-              programmes[0].programme.programme.title;
-            </a>
-          </li>'
+      var $sched = $("#r1Schedule");
+      $sched.append('<li><a href="#" target="_top">'+programmes[0].programme.programme.title
+        +'</a></li>'
           );
 
     }
