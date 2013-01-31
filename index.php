@@ -175,7 +175,17 @@ $app_name = idx($app_info, 'name', '');
     function _showSchedule(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       console.log("Programme",programmes);
-      $("#r1Schedule").append('holaaa'+programmes[0].programme.programme.title);
+      $("#r1Schedule").empty();
+      //id=programmes [i]
+      var i = 0;
+      var programme = programmes[0];
+
+      while(((typeof(programme)) != 'undefined')){
+        $("#r1Schedule").append(''+programme.programme.programme.title);
+        i++;
+        programme = programmes[i];
+      }
+      
 
     }
 
@@ -254,6 +264,8 @@ $app_name = idx($app_info, 'name', '');
             }
         });
 
+        /*
+
         //Radio 2
 
         $.ajax({
@@ -285,7 +297,7 @@ $app_name = idx($app_info, 'name', '');
                 console.log("schedule",data);
                 _showSchedule(data);    
             }
-        });
+        });*/
 
       }
 
