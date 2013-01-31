@@ -196,21 +196,21 @@ $app_name = idx($app_info, 'name', '');
     }
 
     function _storeReminder(id){
-        var Reminder = Parse.Object.extend("Reminder");
-        var reminder = new Reminder();
+        var Reminder2 = Parse.Object.extend("Reminder2");
+        var reminder = new Reminder2();
          console.log("id", id);
          //var title= "#"+id+" .title";
          var title = $('#reminder-' + id + ' .title');
          var start = $("#reminder-"+ id + " .start");
          var description = $("#reminder-"+id+" .description");
          var service = $("#reminder-"+id+" .service");
-        reminder.set("pid", id);
-        reminder.set("title", title);
-        reminder.set("service", service) ;
-        reminder.set("description", description);
+        reminder.set("pid", id.val());
+        reminder.set("title", title.val());
+        reminder.set("service", service.val()) ;
+        reminder.set("description", description.val());
         reminder.set("action", "Available to Listen Live");
         reminder.set("target", "http://www.bbc.co.uk/programmes/"+id);
-        reminder.set("start", start);
+        reminder.set("start", start.val());
          
         reminder.save(null, {
           success: function(gameScore) {
