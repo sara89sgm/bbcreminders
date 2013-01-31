@@ -107,7 +107,6 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
     <script type="text/javascript">
       Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       function logResponse(response) {
@@ -216,6 +215,7 @@ $app_name = idx($app_info, 'name', '');
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
+        FB._https = true;
         FB.init({
           appId      : '<?php echo AppInfo::appID(); ?>', // App ID
           channelUrl : '//<?php echo $_SERVER["HTTP_HOST"]; ?>/channel.html', // Channel File
@@ -236,7 +236,7 @@ $app_name = idx($app_info, 'name', '');
         });
 
         FB.Canvas.setAutoGrow();
-        FB._https = true;
+
 
       };
 
@@ -455,7 +455,8 @@ $app_name = idx($app_info, 'name', '');
     <?php
       }
     ?>
-
+<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
+    
     
   </body>
 </html>
