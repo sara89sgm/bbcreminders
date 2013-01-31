@@ -107,7 +107,7 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-    <script src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.0.min.js"></script>
     <script type="text/javascript">
       function logResponse(response) {
         if (console && console.log) {
@@ -116,8 +116,7 @@ $app_name = idx($app_info, 'name', '');
       }
 
       $(function(){
-        Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
-     
+        
         // Set up so we handle click on the buttons
         $('#postToWall').click(function() {
           FB.ui(
@@ -167,12 +166,13 @@ $app_name = idx($app_info, 'name', '');
         });
       });
 
+    Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
+     
+
     _showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       console.log("Programme",programmes);
-      var sched = $("#r1Schedule");
-      sched.append('<li><a href="#" target="_top">'+programmes[0].programme.programme.title
-        +'</a></li>');
+      $("#r1Schedule").append(''+programmes[0].programme.programme.title);
 
     }
 
@@ -196,8 +196,9 @@ $app_name = idx($app_info, 'name', '');
             // The save failed.
             // error is a Parse.Error with an error code and description.
           }
-});
+      });
     }
+
     </script>
 
     <!--[if IE]>
