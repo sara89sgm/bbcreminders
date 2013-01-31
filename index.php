@@ -78,6 +78,16 @@ $app_info = $facebook->api('/'. AppInfo::appID());
 
 $app_name = idx($app_info, 'name', '');
 
+// Barlesque webservice
+
+$base_url = 'http://www.bbc.co.uk/frameworks/barlesque/webservice/';
+// Specify the ptrt manually to avoid nasty ssi code
+$qs = '?blq_version=4&blq_idcta=on&blq_idcta_ptrt=/';
+ 
+$bodyfirst = file_get_contents($base_url . 'body_first.html' . $qs);
+$bodylast = file_get_contents($base_url . 'body_last.html' . $qs);
+$head = file_get_contents($base_url . 'head.html' . $qs);
+
 ?>
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
@@ -171,8 +181,11 @@ $app_name = idx($app_info, 'name', '');
           document.createElement(tags.pop());
       </script>
     <![endif]-->
+
+    <?= $head ?>
   </head>
   <body>
+    <?= $bodyfirst ?>
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
@@ -348,6 +361,6 @@ $app_name = idx($app_info, 'name', '');
       }
     ?>
 
-    
+    <?= $bodylast ?>
   </body>
 </html>
