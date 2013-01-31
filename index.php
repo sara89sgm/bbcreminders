@@ -204,7 +204,7 @@ $app_name = idx($app_info, 'name', '');
          var start = $("#reminder-"+ id + " .start");
          var description = $("#reminder-"+id+" .description");
          var service = $("#reminder-"+id+" .service");
-        reminder.set("pid", id.val());
+        reminder.set("pid", id);
         reminder.set("title", title.val());
         reminder.set("service", service.val()) ;
         reminder.set("description", description.val());
