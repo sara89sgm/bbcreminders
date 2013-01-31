@@ -199,17 +199,17 @@ $app_name = idx($app_info, 'name', '');
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
          
-         var title= "#"+id+" .title";
-         var start= "#"+id+" .start";
-         var description = "#"+id+" .description";
-         var service = "#"+id+" .service";
-        reminder.set("pid", $(id).val);
-        reminder.set("title", $(title).val);
-        reminder.set("service", $(service).val) ;
-        reminder.set("description", $(description).val);
+         var title= $("#"+id+" .title");
+         var start= $("#"+id+" .start");
+         var description = $("#"+id+" .description");
+         var service = $("#"+id+" .service");
+        reminder.set("pid", id);
+        reminder.set("title", title);
+        reminder.set("service", service) ;
+        reminder.set("description", description);
         reminder.set("action", "Available to Listen Live");
         reminder.set("target", "http://www.bbc.co.uk/programmes/"+id);
-        reminder.set("start", $(start).val);
+        reminder.set("start", start);
          
         reminder.save(null, {
           success: function(gameScore) {
