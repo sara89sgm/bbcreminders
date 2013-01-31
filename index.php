@@ -209,7 +209,7 @@ $app_name = idx($app_info, 'name', '');
         reminder.set("description", $(description).val);
         reminder.set("action", "Available to Listen Live");
         reminder.set("target", "http://www.bbc.co.uk/programmes/"+id);
-        reminder.set("start", start);
+        reminder.set("start", $(start).val);
          
         reminder.save(null, {
           success: function(gameScore) {
