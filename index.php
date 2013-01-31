@@ -107,7 +107,7 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/javascript/parse-1.2.0.min.js"></script>
+    <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
     <script type="text/javascript">
       Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       function logResponse(response) {
