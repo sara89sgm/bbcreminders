@@ -200,17 +200,19 @@ $app_name = idx($app_info, 'name', '');
         var reminder = new Reminder();
          console.log("id", id);
          //var title= "#"+id+" .title";
-         var title = $('#reminder-' + id + ' .title');
-         var start = $("#reminder-"+ id + " .start");
-         var description = $("#reminder-"+id+" .description");
-         var service = $("#reminder-"+id+" .service");
+         var title = $('#reminder-' + id + ' .title').val();
+         var start = $("#reminder-"+ id + " .start").val();
+         var description = $("#reminder-"+id+" .description").val();
+         var service = $("#reminder-"+id+" .service").val();
+         var target="http://www.bbc.co.uk/programmes/"+id;
+         console.log("title")
         reminder.set("pid", id);
-        reminder.set("title", title.val());
-        reminder.set("service", service.val()) ;
-        reminder.set("description", description.val());
+        reminder.set("title", title);
+        reminder.set("service", service) ;
+        reminder.set("description", description);
         reminder.set("action", "Available to Listen Live");
-        reminder.set("target", "http://www.bbc.co.uk/programmes/"+id);
-        reminder.set("start", start.val());
+        reminder.set("target", target);
+        reminder.set("start", start);
          
         reminder.save(null, {
           success: function(gameScore) {
