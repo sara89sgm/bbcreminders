@@ -78,33 +78,10 @@ $app_info = $facebook->api('/'. AppInfo::appID());
 
 $app_name = idx($app_info, 'name', '');
 
-// Barlesque webservice
-
-$base_url = 'http://www.bbc.co.uk/frameworks/barlesque/webservice/';
-// Specify the ptrt manually to avoid nasty ssi code
-$qs = '?blq_version=4&blq_idcta=on&blq_idcta_ptrt=/';
- 
-$bodyfirst = file_get_contents($base_url . 'body_first.html' . $qs);
-$bodylast = file_get_contents($base_url . 'body_last.html' . $qs);
-$head = file_get_contents($base_url . 'head.html' . $qs);
-
 ?>
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
   <head>
-    
-
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />  
-<!--[if (gt IE 8) | (IEMobile)]><!-->
-<link rel="stylesheet" href="http://static.bbci.co.uk/frameworks/barlesque/2.25.0/orb/4/style/orb.css">
-<!--<![endif]-->
-
-<!--[if (lt IE 9) & (!IEMobile)]>
-<link rel="stylesheet" href="http://static.bbci.co.uk/frameworks/barlesque/2.25.0/orb/4/style/orb-ie.css">
-<![endif]-->
-
-  <script type="text/javascript">/*<![CDATA[*/ if (typeof bbccookies_flag === 'undefined') { bbccookies_flag = 'ON'; } showCTA_flag = true; cta_enabled = (showCTA_flag && (bbccookies_flag === 'ON') ); (function(){var e="ckns_policy",m="Thu, 01 Jan 1970 00:00:00 GMT",k={ads:true,personalisation:true,performance:true,necessary:true};function f(p){if(f.cache[p]){return f.cache[p]}var o=p.split("/"),q=[""];do{q.unshift((o.join("/")||"/"));o.pop()}while(q[0]!=="/");f.cache[p]=q;return q}f.cache={};function a(p){if(a.cache[p]){return a.cache[p]}var q=p.split("."),o=[];while(q.length&&"|co.uk|com|".indexOf("|"+q.join(".")+"|")===-1){if(q.length){o.push(q.join("."))}q.shift()}f.cache[p]=o;return o}a.cache={};function i(o,t,p){var z=[""].concat(a(window.location.hostname)),w=f(window.location.pathname),y="",r,x;for(var s=0,v=z.length;s<v;s++){r=z[s];for(var q=0,u=w.length;q<u;q++){x=w[q];y=o+"="+t+";"+(r?"domain="+r+";":"")+(x?"path="+x+";":"")+(p?"expires="+p+";":"");bbccookies.set(y,true)}}}window.bbccookies={_setEverywhere:i,cookiesEnabled:function(){var o="ckns_testcookie"+Math.floor(Math.random()*100000);this.set(o+"=1");if(this.get().indexOf(o)>-1){g(o);return true}return false},set:function(o){return document.cookie=o},get:function(){return document.cookie},_setPolicy:function(o){return h.apply(this,arguments)},readPolicy:function(o){return b.apply(this,arguments)},_deletePolicy:function(){i(e,"",m)},isAllowed:function(){return true},_isConfirmed:function(){return c()!==null},_acceptsAll:function(){var o=b();return o&&!(j(o).indexOf("0")>-1)},_getCookieName:function(){return d.apply(this,arguments)},_showPrompt:function(){return(!this._isConfirmed()&&window.cta_enabled&&this.cookiesEnabled()&&!window.bbccookies_disable)}};bbccookies._getPolicy=bbccookies.readPolicy;function d(p){var o=(""+p).match(/^([^=]+)(?==)/);return(o&&o.length?o[0]:"")}function j(o){return""+(o.ads?1:0)+(o.personalisation?1:0)+(o.performance?1:0)}function h(r){if(typeof r==="undefined"){r=k}if(typeof arguments[0]==="string"){var o=arguments[0],q=arguments[1];if(o==="necessary"){q=true}r=b();r[o]=q}else{if(typeof arguments[0]==="object"){r.necessary=true}}var p=new Date();p.setYear(p.getFullYear()+1);p=p.toUTCString();bbccookies.set(e+"="+j(r)+";domain=bbc.co.uk;path=/;expires="+p+";");bbccookies.set(e+"="+j(r)+";domain=bbc.com;path=/;expires="+p+";");return r}function l(o){if(o===null){return null}var p=o.split("");return{ads:!!+p[0],personalisation:!!+p[1],performance:!!+p[2],necessary:true}}function c(){var o=new RegExp("(?:^|; ?)"+e+"=(\\d\\d\\d)($|;)"),p=document.cookie.match(o);if(!p){return null}return p[1]}function b(o){var p=l(c());if(!p){p=k}if(o){return p[o]}else{return p}}function g(o){return document.cookie=o+"=;expires="+m+";"}function n(){var o='<script type="text/javascript" src="http://static.bbci.co.uk/frameworks/bbccookies/0.5.8/script/bbccookies.js"><\/script>';if(window.bbccookies_flag==="ON"&&!bbccookies._acceptsAll()&&!window.bbccookies_disable){document.write(o)}}n()})(); /*]]>*/</script> <script type="text/javascript" src="http://static.bbci.co.uk/frameworks/requirejs/0.12.1/sharedmodules/require.js"></script> <script type="text/javascript">  bbcRequireMap = {"jquery-1":"http://static.bbci.co.uk/frameworks/jquery/0.2.1/sharedmodules/jquery-1.7.2", "jquery-1.4":"http://static.bbci.co.uk/frameworks/jquery/0.2.1/sharedmodules/jquery-1.4", "swfobject-2":"http://static.bbci.co.uk/frameworks/swfobject/0.1.4/sharedmodules/swfobject-2", "demi-1":"http://static.bbci.co.uk/frameworks/demi/0.9.8/sharedmodules/demi-1", "gelui-1":"http://static.bbci.co.uk/frameworks/gelui/0.9.9/sharedmodules/gelui-1", "cssp!gelui-1/overlay":"http://static.bbci.co.uk/frameworks/gelui/0.9.9/sharedmodules/gelui-1/overlay.css", "istats-1":"http://static.bbci.co.uk/frameworks/istats/0.16.1/modules/istats-1", "relay-1":"http://static.bbci.co.uk/frameworks/relay/0.2.4/sharedmodules/relay-1", "clock-1":"http://static.bbci.co.uk/frameworks/clock/0.1.9/sharedmodules/clock-1", "canvas-clock-1":"http://static.bbci.co.uk/frameworks/clock/0.1.9/sharedmodules/canvas-clock-1", "cssp!clock-1":"http://static.bbci.co.uk/frameworks/clock/0.1.9/sharedmodules/clock-1.css", "jssignals-1":"http://static.bbci.co.uk/frameworks/jssignals/0.3.6/modules/jssignals-1", "jcarousel-1":"http://static.bbci.co.uk/frameworks/jcarousel/0.1.10/modules/jcarousel-1"}; require({ baseUrl: 'http://static.bbci.co.uk/', paths: bbcRequireMap, waitSeconds: 30 }); </script>   <script type="text/javascript"> /* <![CDATA[ */ define('id-statusbar-config', { 'translation_signedout': "Sign in", 'translation_signedin': "Your account", 'use_overlay' : false, 'signin_url' : "https://ssl.bbc.co.uk/id/signin?ptrt=%2F", 'locale' : "en-GB", 'policyname' : "", 'ptrt' : "/" }); /* ]]> */ </script>  <script type="text/javascript"> (function () { if (! window.require) { throw new Error('idcta: could not find require'); } var map = {}; map['idapp-1'] = 'http://static.bbci.co.uk/idapp/0.38.3/modules/idapp/idapp-1'; map['idcta/idcta-1'] = 'http://static.bbci.co.uk/id/0.15.1/modules/idcta/idcta-1'; require({paths: map}); define('id-config', {"idapp":{"version":"0.38.3","hostname":"ssl.bbc.co.uk"},"idtranslations":{"version":"dev"},"identity":{"baseUrl":"https:\/\/talkback.live.bbc.co.uk\/identity"},"pathway":{"name":null,"staticAssetUrl":"http:\/\/static.bbci.co.uk\/idapp\/0.38.3\/modules\/idapp\/idapp-1\/View.css"},"settingsurl":"https:\/\/id.bbc.co.uk\/users\/dash"}); })(); </script>              
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
 
@@ -183,8 +160,14 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
               }
             }
           );
+
+
         });
       });
+
+    _showSchedule = function(schedule){
+      console.log(schedule.schedule);
+    }
     </script>
 
     <!--[if IE]>
@@ -196,7 +179,6 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
     <![endif]-->
   </head>
   <body>
-    <?= $bodyfirst ?>
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
@@ -222,6 +204,18 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
         FB.Canvas.setAutoGrow();
       };
 
+      window.bbcScheduleInit = function() {
+
+        $.ajax({
+            url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
+
+            success : function (data) {
+                console.log("schedule",data);
+                this._showSchedule(data);    
+            }
+        });
+      }
+
       // Load the SDK Asynchronously
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -239,12 +233,11 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
       <div>
         <h1>Welcome, <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
         <p class="tagline">
-          This is your app
           <a href="<?php echo he(idx($app_info, 'link'));?>" target="_top"><?php echo he($app_name); ?></a>
         </p>
 
         <div id="share-app">
-          <p>Share your app:</p>
+          <p>Share this app:</p>
           <ul>
             <li>
               <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
@@ -276,8 +269,103 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
       if ($user_id) {
     ?>
 
+
+
+
     <section id="samples" class="clearfix">
-      <h1>Examples of the Facebook Graph API</h1>
+      <h1>More info</h1>
+
+      <div class="list">
+        <h3>A few of your friends</h3>
+        <ul class="friends">
+          <?php
+            foreach ($friends as $friend) {
+              // Extract the pieces of info we need from the requests above
+              $id = idx($friend, 'id');
+              $name = idx($friend, 'name');
+          ?>
+          <li>
+            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
+              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
+              <?php echo he($name); ?>
+            </a>
+          </li>
+          <?php
+            }
+          ?>
+        </ul>
+      </div>
+
+      <div class="list inline">
+        <h3>Recent photos</h3>
+        <ul class="photos">
+          <?php
+            $i = 0;
+            foreach ($photos as $photo) {
+              // Extract the pieces of info we need from the requests above
+              $id = idx($photo, 'id');
+              $picture = idx($photo, 'picture');
+              $link = idx($photo, 'link');
+
+              $class = ($i++ % 4 === 0) ? 'first-column' : '';
+          ?>
+          <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
+            <a href="<?php echo he($link); ?>" target="_top"></a>
+          </li>
+          <?php
+            }
+          ?>
+        </ul>
+      </div>
+
+      <div class="list">
+        <h3>Things you like</h3>
+        <ul class="things">
+          <?php
+            foreach ($likes as $like) {
+              // Extract the pieces of info we need from the requests above
+              $id = idx($like, 'id');
+              $item = idx($like, 'name');
+
+              // This display's the object that the user liked as a link to
+              // that object's page.
+          ?>
+          <li>
+            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
+              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($item); ?>">
+              <?php echo he($item); ?>
+            </a>
+          </li>
+          <?php
+            }
+          ?>
+        </ul>
+      </div>
+
+      <div class="list">
+        <h3>Friends using this app</h3>
+        <ul class="friends">
+          <?php
+            foreach ($app_using_friends as $auf) {
+              // Extract the pieces of info we need from the requests above
+              $id = idx($auf, 'uid');
+              $name = idx($auf, 'name');
+          ?>
+          <li>
+            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
+              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
+              <?php echo he($name); ?>
+            </a>
+          </li>
+          <?php
+            }
+          ?>
+        </ul>
+      </div>
+    </section>
+
+    <section id="samples" class="clearfix">
+      <h1>More info</h1>
 
       <div class="list">
         <h3>A few of your friends</h3>
@@ -372,6 +460,6 @@ $head = file_get_contents($base_url . 'head.html' . $qs);
       }
     ?>
 
-    <?= $bodylast ?>
+    
   </body>
 </html>
