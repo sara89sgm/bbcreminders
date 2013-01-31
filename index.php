@@ -211,7 +211,7 @@ $app_name = idx($app_info, 'name', '');
 
             success : function (data) {
                 console.log("schedule",data);
-                this._showSchedule(data);    
+                _showSchedule(data);    
             }
         });
       }
