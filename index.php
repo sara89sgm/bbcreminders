@@ -175,7 +175,8 @@ $app_name = idx($app_info, 'name', '');
     function _showSchedule(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       console.log("Programme",programmes);
-      $("#r1Schedule").append(''+programmes[0].programme.programme.title);
+      var list = schedule.service.key;
+      $("#"+list).append(''+programmes[0].programme.programme.title);
 
     }
 
@@ -350,7 +351,28 @@ $app_name = idx($app_info, 'name', '');
 
       <div class="list">
         <h3>Radio1 Programmes</h3>
-        <ul class="things">
+        <ul class="things" id="radio1Schedule">
+          
+        </ul>
+      </div>
+
+       <div class="list">
+        <h3>Radio1 Programmes</h3>
+        <ul class="things" id="radio2Schedule">
+          
+        </ul>
+      </div>
+
+       <div class="list">
+        <h3>Radio1 Programmes</h3>
+        <ul class="things" id="radio3Schedule">
+          
+        </ul>
+      </div>
+
+       <div class="list">
+        <h3>Radio1 Programmes</h3>
+        <ul class="things" id="radio4Schedule">
           
         </ul>
       </div>
