@@ -181,7 +181,7 @@ $app_name = idx($app_info, 'name', '');
       var programmeActual = programmes[0];
 
       while(((typeof(programmeActual)) != 'undefined')){
-         $("#r1Schedule").append('<li id="remider-'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p></br>'+
+         $("#r1Schedule").append('<li id="remider-'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p>'+
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
           '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
           '<p class="start">'+programmeActual.start+'</p>'+
@@ -196,10 +196,10 @@ $app_name = idx($app_info, 'name', '');
     function _storeReminder(id){
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
-         
+         console.log("id", id);
          //var title= "#"+id+" .title";
          var title = $('#reminder-' + id + ' .title');
-         var start= $("#reminder-"+id+" .start");
+         var start = $("#reminder-"+ id + " .start");
          var description = $("#reminder-"+id+" .description");
          var service = $("#reminder-"+id+" .service");
         reminder.set("pid", id);
