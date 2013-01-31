@@ -278,7 +278,7 @@ $app_name = idx($app_info, 'name', '');
         //Radio 4
 
         $.ajax({
-            url : "http://www.bbc.co.uk/radio4/programmes/schedules.json",
+            url : "http://www.bbc.co.uk/radio4/programmes/schedules/fm.json",
 
             success : function (data) {
                 console.log("schedule",data);
