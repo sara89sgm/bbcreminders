@@ -166,7 +166,16 @@ $app_name = idx($app_info, 'name', '');
       });
 
     _showSchedule = function(schedule){
-      console.log(schedule.schedule);
+      var programmes=schedule.schedule.day.broadcasts;
+      var $sched = $("r1Schedule");
+      $sched.append(
+          <li>
+            <a href="#" target="_top">
+              programmes[0].programme.programme.title;
+            </a>
+          </li>
+          );
+
     }
     </script>
 
@@ -209,7 +218,7 @@ $app_name = idx($app_info, 'name', '');
 
         //Radio 1
         $.ajax({
-            url : "http://www.bbc.co.uk/radio2/programmes/schedules/england.json",
+            url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
 
             success : function (data) {
                 console.log("schedule",data);
@@ -308,27 +317,13 @@ $app_name = idx($app_info, 'name', '');
 
 
 
-    <section id="samples" class="clearfix">
-      <h1>More info</h1>
+    <section id="schedules" class="clearfix">
+      <h1>Radio 1</h1>
 
       <div class="list">
-        <h3>A few of your friends</h3>
-        <ul class="friends">
-          <?php
-            foreach ($friends as $friend) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($friend, 'id');
-              $name = idx($friend, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
+        <h3>Radio1 Programmes</h3>
+        <ul class="r1Schedule">
+          
         </ul>
       </div>
 
