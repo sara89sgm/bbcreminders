@@ -180,7 +180,7 @@ $app_name = idx($app_info, 'name', '');
       var i = 0;
       var programmeActual = programmes[0];
 
-      while(((typeof(programme)) != 'undefined')){
+      while(((typeof(programmeActual)) != 'undefined')){
 
         console.log('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
         $("#r1Schedule").append('<li id="'+programmeActual.programme.pid+'"><a onclick ="_storeReminder('+programmeActual.programme.pid+')">'+programmeActual.programme.programme.title+'</a></li>');
