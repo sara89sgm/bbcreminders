@@ -175,7 +175,7 @@ $app_name = idx($app_info, 'name', '');
     function _showSchedule(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       console.log("Programme",programmes);
-      var list = schedule.service.key;
+      var list = schedule.shcedule.service.key;
       $("#"+list).append(''+programmes[0].programme.programme.title);
 
     }
