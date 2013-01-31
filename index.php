@@ -169,11 +169,11 @@ $app_name = idx($app_info, 'name', '');
       var programmes=schedule.schedule.day.broadcasts;
       var $sched = $("r1Schedule");
       $sched.append(
-          <li>
+         ' <li>
             <a href="#" target="_top">
               programmes[0].programme.programme.title;
             </a>
-          </li>
+          </li>'
           );
 
     }
