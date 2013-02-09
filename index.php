@@ -205,7 +205,7 @@ $app_name = idx($app_info, 'name', '');
          var description = $("#reminder-"+id+" .description").val();
          var service = $("#reminder-"+id+" .service").val();
          var target="http://www.bbc.co.uk/programmes/"+id;
-         console.log("title")
+         console.log("title"+title);
         reminder.set("pid", id);
         reminder.set("title", title);
         reminder.set("service", service) ;
@@ -338,7 +338,7 @@ $app_name = idx($app_info, 'name', '');
           <ul>
             <li>
               <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">Post to Wall</span>
+                <span class="plus">Post dddto Wall</span>
               </a>
             </li>
             <li>
