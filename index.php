@@ -109,34 +109,6 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
     <script type="text/javascript" src="/javascript/bbcData.js"></script>
-   
-    <script type="text/javascript">
-      Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
-      function logResponse(response) {
-        if (console && console.log) {
-          console.log('The response was', response);
-        }
-      }
-
-
-
-        
-
-  </script>
-
-  <script type="text/javascript">
-
-
-    
-    </script>
-
-    <!--[if IE]>
-      <script type="text/javascript">
-        var tags = ['header', 'section'];
-        while(tags.length)
-          document.createElement(tags.pop());
-      </script>
-    <![endif]-->
   </head>
   <body>
     <div id="fb-root"></div>
@@ -169,7 +141,19 @@ $app_name = idx($app_info, 'name', '');
 
       };
 
-      
+      window.bbcAsyncInit = function(){
+        console.log("hello");
+             //Radio 1
+        $.ajax({
+            url : "http://www.bbc.co.uk/radio1/programmes/schedules/england.json",
+
+            success : function (data) {
+               // console.log("schedule",data);
+                _showSchedule(data);    
+            }
+        });
+
+      }
 
       // Load the SDK Asynchronously
       (function(d, s, id) {
