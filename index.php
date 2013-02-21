@@ -127,14 +127,7 @@ $app_name = idx($app_info, 'name', '');
             cookie     : true, // enable cookies to allow the server to access the session
             xfbml      : true  // parse XFBML
           });
-          FB.api('/me', function(user) {
-            if (user) {
-              var image = document.getElementById('image');
-              image.src = 'https://graph.facebook.com/' + user.id + '/picture';
-              var name = document.getElementById('name');
-              name.innerHTML = user.name
-            }
-          });
+        
             FB.Event.subscribe('auth.login', function(response) {
           // We want to reload the page now so PHP can read the cookie that the
           // Javascript SDK sat. But we don't want to use
@@ -145,6 +138,12 @@ $app_name = idx($app_info, 'name', '');
         });
 
         FB.Canvas.setAutoGrow();
+
+          FB.api('/me', function(user) {
+            if (user) {
+            console.log(user.name);
+            }
+          });
         };
         // Load the SDK Asynchronously
         (function(d){
