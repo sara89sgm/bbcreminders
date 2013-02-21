@@ -1,10 +1,5 @@
-define(['javascript/jquery-1.7.1.min.js', 'javascript/parse-1.2.0.js'],function ($, Parse) {
 
-  var exports = {};
-
-
-
- exports._showSchedule = function(schedule){
+ BbcData._showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       $("#r1Schedule").empty();
       //id=programmes [i]
@@ -27,7 +22,7 @@ define(['javascript/jquery-1.7.1.min.js', 'javascript/parse-1.2.0.js'],function 
 
     }
 
-    exports._storeReminder = function(id){
+    BbcData._storeReminder = function(id){
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
          console.log("id", id);
@@ -55,6 +50,5 @@ define(['javascript/jquery-1.7.1.min.js', 'javascript/parse-1.2.0.js'],function 
           }
       });
     }
-return exports;
-});
+
 

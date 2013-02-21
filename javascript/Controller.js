@@ -1,21 +1,10 @@
-define([
-    'javascript/jquery-1.7.1.min.js',
-    'javascript/parse-1.2.0.js',
-    'javascript/bbcData.js',
-], function ($ , Parse , BbcData) {
+
 
      var exports = {};
 
-       (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        console.log("fbbbb");
-      }(document, 'script', 'facebook-jssdk'));
+
     
-    exports.init = function () {
+    Controller.init = function () {
       console.log("init");
       console.log(Parse);
       FB._https = true;
@@ -55,7 +44,3 @@ define([
         });
 
     }
-
-
-    return exports;
-});

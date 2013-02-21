@@ -105,9 +105,15 @@ $app_name = idx($app_info, 'name', '');
     <meta property="og:site_name" content="<?php echo he($app_name); ?>" />
     <meta property="og:description" content="My first app" />
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
-
+   <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
+ 
     <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
-    <script type="text/javascript" src="/javascript/require.js"></script>
+       <script type="text/javascript" src="/javascript/Controller.js"></script>
+          <script type="text/javascript" src="/javascript/bbcData.js"></script>
+             <script type="text/javascript" src="/javascript/genre.js"></script>
+ 
+ 
+ 
   </head>
   <body>
     <div id="fb-root"></div>
@@ -115,8 +121,7 @@ $app_name = idx($app_info, 'name', '');
      <script>
         Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       
-        require(['javascript/Controller.js',
-          'javascript/parse-1.2.0.js'], function (Controller, Parse) {
+       
             (function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
@@ -126,7 +131,7 @@ $app_name = idx($app_info, 'name', '');
               console.log("fbbbb");
           }(document, 'script', 'facebook-jssdk'));
           Controller.init();
-        });
+        
 
     </script>
 
