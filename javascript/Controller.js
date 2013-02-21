@@ -1,6 +1,6 @@
 define([
     'javascript/jquery-1.7.1.min.js',
-    'javascript/parse-1.2.0.js',
+    'parse-1.2.0.js',
     'javascript/bbcData.js',
 ], function ($ , Parse , BbcData) {
 
