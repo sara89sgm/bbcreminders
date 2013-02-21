@@ -12,6 +12,7 @@ define([
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
+        console.log("fbbbb");
       }(document, 'script', 'facebook-jssdk'));
     
     exports.init = function () {
