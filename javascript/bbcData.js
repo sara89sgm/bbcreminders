@@ -7,7 +7,7 @@
       var i = 0;
       var programmeActual = programmes[0];
 
-      var method="_storeReminder('"+programmeActual.programme.pid+"') ";
+      var method="BbcData_storeReminder('"+programmeActual.programme.pid+"') ";
 
       console.log(programmeActual);
       while(((typeof(programmeActual)) != 'undefined')){
