@@ -91,7 +91,9 @@ header .tagline {
 /* ------------------------------------------ */
 
 .reminder {
-  
+border: 2px solid rgb(44, 39, 151);
+padding: 5px;
+border-radius: 12px;
 }
 
 /* =buttons
