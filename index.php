@@ -139,20 +139,31 @@ $app_name = idx($app_info, 'name', '');
           window.location = window.location;
         });
 
+        FB.Event.subscribe('auth.statusChange', function (response) {
+        switch (response.status) {
+            case 'unknown':
+            // Fall through
+            case 'not_authorized':
+                console.debug('Must login!');
+                break;
+            case 'connected':
+                var uid = response.authResponse.userID;
+                var signedRequest = response.authResponse.signedRequest;
+                console.debug('woop! Welcome user #' + uid);
+                
+                getUserMusicProfile();
+
+                break;
+            default:
+                console.log("Unexpected response from Facebook auth: `" + response.status + "` not recognised!")
+        }
+
+
+    });
+
         FB.Canvas.setAutoGrow();
 
-          FB.api('/me', function(user) {
-            if (user) {
-            FB.api('/me/music.listens', function (fbresponse) {
-              console.log(fbresponse);
-              getIdTracks(fbresponse.data, meId);
-
-            });
-            }
-          });
-
           
-        };
         // Load the SDK Asynchronously
         (function(d){
            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];

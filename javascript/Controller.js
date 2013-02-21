@@ -18,3 +18,17 @@ var Controller_init = function () {
         });
 
     }
+
+    function getUserMusicProfile(){
+      FB.api('/me', function(user) {
+            if (user) {
+              console.log(user.id);
+            FB.api('/me/music.listens', function (fbresponse) {
+              console.log(fbresponse);
+              getIdTracks(fbresponse.data, meId);
+
+           });
+
+          
+        };
+    }
