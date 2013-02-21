@@ -19,7 +19,7 @@ var Controller_init = function () {
 
     }
 
-    function getUserMusicProfile(){
+    /*function getUserMusicProfile(){
       FB.api('/me', function(user) {
             if (user) {
               console.log(user.id);
@@ -32,4 +32,4 @@ var Controller_init = function () {
           
         };
     });
-  }
+  }*/
