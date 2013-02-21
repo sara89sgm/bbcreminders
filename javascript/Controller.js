@@ -5,8 +5,6 @@ define([
 ], function ($ , Parse , BbcData) {
 
      var exports = {};
-     
-     console.log("init22");
 
        (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,7 +16,6 @@ define([
     
     exports.init = function () {
       console.log("init");
-      Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       console.log(Parse);
       FB._https = true;
         FB.init({
