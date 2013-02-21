@@ -106,17 +106,18 @@ $app_name = idx($app_info, 'name', '');
     <meta property="og:description" content="My first app" />
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
-    
+    <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
     <script type="text/javascript" src="/javascript/require.js"></script>
   </head>
   <body>
     <div id="fb-root"></div>
 
      <script>
+        Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
+      
         require(['javascript/Controller.js',
           'javascript/parse-1.2.0.js'], function (Controller, Parse) {
-          Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
-      
+          
           Controller.init();
         });
     </script>
