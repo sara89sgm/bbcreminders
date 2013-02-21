@@ -1,5 +1,5 @@
 
- var BbcData._showSchedule = function(schedule){
+ var BbcData_showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       $("#r1Schedule").empty();
       //id=programmes [i]
@@ -22,7 +22,7 @@
 
     }
 
-    var BbcData._storeReminder = function(id){
+    var BbcData_storeReminder = function(id){
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
          console.log("id", id);

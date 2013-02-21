@@ -1,4 +1,4 @@
-var Controller.init = function () {
+var Controller_init = function () {
       console.log("init");
      
       FB._https = true;

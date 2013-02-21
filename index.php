@@ -130,7 +130,7 @@ $app_name = idx($app_info, 'name', '');
               fjs.parentNode.insertBefore(js, fjs);
               console.log("fbbbb");
           }(document, 'script', 'facebook-jssdk'));
-          Controller.init();
+          Controller_init();
         
 
     </script>
