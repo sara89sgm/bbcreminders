@@ -94,6 +94,7 @@ function calculateTopGenre(userId) {
     availableGenres["techno"]=0;
     availableGenres["jazz"]=0;
     availableGenres["dance"]=0;
+    availableGenres["classic"]=0;
     
     //count which genre has more occurrences
 
@@ -126,6 +127,8 @@ function calculateTopGenre(userId) {
             availableGenres["dance"]++;
         if (genres[i].contains("jazz"))
             availableGenres["jazz"]++;
+        if (genres[i].contains("classic"))
+            availableGenres["classic"]++;
 
         i++;    
     }

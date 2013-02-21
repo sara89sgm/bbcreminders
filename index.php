@@ -112,6 +112,7 @@ $app_name = idx($app_info, 'name', '');
    <script type="text/javascript" src="/javascript/Controller.js"></script>
  <script type="text/javascript" src="/javascript/bbcData.js"></script>
  <script type="text/javascript" src="/javascript/stationRecommender.js"></script>
+  <script type="text/javascript" src="/javascript/infoSongs.js"></script>
 
  
   </head>
@@ -143,7 +144,7 @@ $app_name = idx($app_info, 'name', '');
           FB.api('/me', function(user) {
             if (user) {
             FB.api('/me/music.listens', function (fbresponse) {
-
+              console.log(fbresponse);
               getIdTracks(fbresponse.data, meId);
 
             });
