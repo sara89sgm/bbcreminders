@@ -106,9 +106,11 @@ $app_name = idx($app_info, 'name', '');
     <meta property="og:description" content="My first app" />
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
   
-             <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
- 
- 
+    <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
+     <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
+   <script type="text/javascript" src="/javascript/Controller.js"></script>
+ <script type="text/javascript" src="/javascript/bbcData.js"></script>
+
  
   </head>
   <body>
