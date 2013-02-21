@@ -108,6 +108,7 @@ $app_name = idx($app_info, 'name', '');
   
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
      <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
+        <script type="text/javascript" src="/javascript/fb.js"></script>
    <script type="text/javascript" src="/javascript/Controller.js"></script>
  <script type="text/javascript" src="/javascript/bbcData.js"></script>
 
@@ -120,15 +121,15 @@ $app_name = idx($app_info, 'name', '');
         Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       
        
-            (function(d, s, id) {
+           /* (function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
               js = d.createElement(s); js.id = id;
               js.src = "//connect.facebook.net/en_US/all.js";
               fjs.parentNode.insertBefore(js, fjs);
               Controller_init();
-          }(document, 'script', 'facebook-jssdk'));
-            
+          }(document, 'script', 'facebook-jssdk'));*/
+
           
         
 
