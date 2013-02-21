@@ -20,7 +20,7 @@
       }
       
 
-    }
+    };
 
     var BbcData_storeReminder = function(id){
         var Reminder = Parse.Object.extend("Reminder");
@@ -49,6 +49,6 @@
        alert("error");
           }
       });
-    }
+    };
 
 
