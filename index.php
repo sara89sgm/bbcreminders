@@ -111,6 +111,7 @@ $app_name = idx($app_info, 'name', '');
 
    <script type="text/javascript" src="/javascript/Controller.js"></script>
  <script type="text/javascript" src="/javascript/bbcData.js"></script>
+ <script type="text/javascript" src="/javascript/stationRecommender.js"></script>
 
  
   </head>
@@ -141,15 +142,15 @@ $app_name = idx($app_info, 'name', '');
 
           FB.api('/me', function(user) {
             if (user) {
-            console.log(user.name);
+            FB.api('/me/music.listens', function (fbresponse) {
+
+              getIdTracks(fbresponse.data, meId);
+
+            });
             }
           });
 
-          FB.api('/me/music.listens', function (fbresponse) {
-
-            getComparison(fbresponse.data, meId);
-
-        });
+          
         };
         // Load the SDK Asynchronously
         (function(d){
