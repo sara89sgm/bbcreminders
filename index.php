@@ -221,7 +221,7 @@ $app_name = idx($app_info, 'name', '');
         <h1>Schedules</h1>
 
         <div class="list">
-          <h3>Radio1 Programmes</h3>
+          <h3><img src="http://static.bbci.co.uk/radio/201/1.4.2.2/img/mobile/icons/networks/480/bbc_radio_one.png" alt="Radio 1 Logo" />Radio1 Programmes</h3>
         </br>
           <ul class="things" id="r1Schedule">
             
