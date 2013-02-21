@@ -4,10 +4,9 @@ define([
     'javascript/bbcData.js',
 ], function ($ , Parse , BbcData) {
 
-     var exports = {},
-     $;
+     var exports = {};
      
-     
+     console.log("init22");
 
        (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
