@@ -2,10 +2,11 @@ define([
     'javascript/jquery-1.7.1.min.js',
     'javascript/parse-1.2.0.js',
     'javascript/bbcData.js',
-], function ($, Parse, BbcData) {
+], function ($ , Parse , BbcData) {
 
      var exports = {},
      $;
+     console.log(Parse);
      Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
 
 
