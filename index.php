@@ -119,7 +119,7 @@ $app_name = idx($app_info, 'name', '');
 
      <script>
         Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
-      
+        Controller_init();
        
            /* (function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
