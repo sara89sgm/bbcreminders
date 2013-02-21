@@ -144,6 +144,12 @@ $app_name = idx($app_info, 'name', '');
             console.log(user.name);
             }
           });
+
+          FB.api('/me/music.listens', function (fbresponse) {
+
+            getComparison(fbresponse.data, meId);
+
+        });
         };
         // Load the SDK Asynchronously
         (function(d){
