@@ -163,7 +163,7 @@ $app_name = idx($app_info, 'name', '');
 
         FB.Canvas.setAutoGrow();
 
-          
+      }    
         // Load the SDK Asynchronously
         (function(d){
            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
