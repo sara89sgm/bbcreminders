@@ -150,7 +150,16 @@ $app_name = idx($app_info, 'name', '');
                 var uid = response.authResponse.userID;
                 var signedRequest = response.authResponse.signedRequest;
                 console.debug('woop! Welcome user #' + uid);
+                FB.api('/me', function(user) {
+            
+                console.log(user)
+                FB.api('/me/music.listens', function (fbresponse) {
+              console.log(fbresponse);
+              getIdTracks(fbresponse.data, meId);
 
+                });
+            
+              });  
                 
 
                 break;
@@ -164,16 +173,7 @@ $app_name = idx($app_info, 'name', '');
 
         FB.Canvas.setAutoGrow();
 
-        FB.api('/me', function(user) {
-            
-              console.log(user)
-           /* FB.api('/me/music.listens', function (fbresponse) {
-              console.log(fbresponse);
-              getIdTracks(fbresponse.data, meId);
-
-            });*/
-            
-          });  
+        
 
           
         };
