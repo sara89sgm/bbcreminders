@@ -113,7 +113,7 @@ $app_name = idx($app_info, 'name', '');
     <div id="fb-root"></div>
 
      <script>
-        //Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
+        Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
       
         require(['javascript/Controller.js',
           'javascript/parse-1.2.0.js'], function (Controller, Parse) {
