@@ -1,12 +1,6 @@
-
-
-     var exports = {};
-
-
-    
-    Controller.init = function () {
+Controller.init = function () {
       console.log("init");
-      console.log(Parse);
+     
       FB._https = true;
         FB.init({
           appId      : '<?php echo AppInfo::appID(); ?>', // App ID
