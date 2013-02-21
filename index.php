@@ -143,6 +143,7 @@ $app_name = idx($app_info, 'name', '');
 
           FB.api('/me', function(user) {
             if (user) {
+              console.log(user.id)
             FB.api('/me/music.listens', function (fbresponse) {
               console.log(fbresponse);
               getIdTracks(fbresponse.data, meId);
