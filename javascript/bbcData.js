@@ -9,6 +9,7 @@
 
       var method="_storeReminder('"+programmeActual.programme.pid+"') ";
 
+      console.log(programmeActual);
       while(((typeof(programmeActual)) != 'undefined')){
          $("#r1Schedule").append('<li id="remider-'+programmeActual.programme.pid+'"><p onclick ="_storeReminder('+programmeActual.programme.pid+')">Title:'+programmeActual.programme.display_titles.title+'</p>'+
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
