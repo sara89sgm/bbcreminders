@@ -1,104 +1,10 @@
-      function logResponse(response) {
-        if (console && console.log) {
-          console.log('The response was', response);
-        }
-      }
+define(['jquery-1.7.1.min.js', 'parse-1.2.0.js'],function ($, Parse) {
 
-      $(function(){
-        
-        // Set up so we handle click on the buttons
-        $('#postToWall').click(function() {
-          FB.ui(
-            {
-              method : 'feed',
-              link   : $(this).attr('data-url')
-            },
-            function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
-              }
-            }
-          );
-        });
-
-        $('#sendToFriends').click(function() {
-          FB.ui(
-            {
-              method : 'send',
-              link   : $(this).attr('data-url')
-            },
-            function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
-              }
-            }
-          );
-        });
-
-        $('#sendRequest').click(function() {
-          FB.ui(
-            {
-              method  : 'apprequests',
-              message : $(this).attr('data-message')
-            },
-            function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
-              }
-            }
-          );
+  var exports = {};
 
 
-       
 
-       
-
-        /*
-
-        //Radio 2
-
-        $.ajax({
-            url : "http://www.bbc.co.uk/radio2/programmes/schedules.json",
-
-            success : function (data) {
-                console.log("schedule",data);
-                _showSchedule(data);    
-            }
-        });
-
-        //Radio 3
-        $.ajax({
-            url : "http://www.bbc.co.uk/radio3/programmes/schedules.json",
-
-            success : function (data) {
-                console.log("schedule",data);
-                _showSchedule(data);    
-            }
-        });
-
-
-        //Radio 4
-
-        $.ajax({
-            url : "http://www.bbc.co.uk/radio4/programmes/schedules/fm.json",
-
-            success : function (data) {
-                console.log("schedule",data);
-                _showSchedule(data);    
-            }
-        });*/
-
-      
-
-
-        });
-      });
-
-
-function _showSchedule(schedule){
+ exports._showSchedule = function(schedule){
       var programmes=schedule.schedule.day.broadcasts;
       $("#r1Schedule").empty();
       //id=programmes [i]
@@ -121,7 +27,7 @@ function _showSchedule(schedule){
 
     }
 
-    function _storeReminder(id){
+    exports._storeReminder = function(id){
         var Reminder = Parse.Object.extend("Reminder");
         var reminder = new Reminder();
          console.log("id", id);
@@ -149,5 +55,6 @@ function _showSchedule(schedule){
           }
       });
     }
-
+return exports;
+});
 
