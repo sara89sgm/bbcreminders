@@ -15,7 +15,7 @@
           '<p class="service">'+schedule.schedule.service.key+'</p>'+
           '<p class="description">'+programmeActual.programme.short_synopsis+'</p>'+
           '<p class="start">'+programmeActual.start+'</p>'+
-          '<a onclick="'+method+'">Remind me!</a></li></br>');
+          '<a class="remind-me-button" onclick="'+method+'">Remind me!</a></li></br>');
         i++;
         programmeActual = programmes[i];
       }
