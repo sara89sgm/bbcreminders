@@ -126,9 +126,10 @@ $app_name = idx($app_info, 'name', '');
               js = d.createElement(s); js.id = id;
               js.src = "//connect.facebook.net/en_US/all.js";
               fjs.parentNode.insertBefore(js, fjs);
-              console.log("fbbbb");
+              Controller_init();
           }(document, 'script', 'facebook-jssdk'));
-          Controller_init();
+            
+          
         
 
     </script>
