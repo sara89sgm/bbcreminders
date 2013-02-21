@@ -8,6 +8,7 @@ var genresMe; //array[] of the first 5 genres for every artist
 
 
 function getIdTracks(data, id) {
+    console.log("data",data);
     var songsUser = [];
     var i = 0;
     for (i; i < data.length; i++) {
