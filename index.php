@@ -113,7 +113,7 @@ $app_name = idx($app_info, 'name', '');
     <div id="fb-root"></div>
 
      <script>
-        require(['Controller'], function (Controller) {
+        require(['javascript/Controller.js'], function (Controller) {
           Controller.init();
         });
     </script>

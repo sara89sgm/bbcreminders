@@ -1,7 +1,7 @@
 define([
-    'jquery-1.7.1.min.js',
-    'parse-1.2.0.js',
-    'bbcData.js',
+    'javascript/jquery-1.7.1.min.js',
+    'javascript/parse-1.2.0.js',
+    'javascript/bbcData.js',
 ], function ($, Parse, BbcData) {
 
      var exports = {},

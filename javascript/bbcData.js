@@ -1,4 +1,4 @@
-define(['jquery-1.7.1.min.js', 'parse-1.2.0.js'],function ($, Parse) {
+define(['javascript/jquery-1.7.1.min.js', 'javascript/parse-1.2.0.js'],function ($, Parse) {
 
   var exports = {};
 
