@@ -108,7 +108,7 @@ $app_name = idx($app_info, 'name', '');
   
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
      <script type="text/javascript" src="/javascript/parse-1.2.0.js"></script>
-        <script type="text/javascript" src="/javascript/fb.js"></script>
+
    <script type="text/javascript" src="/javascript/Controller.js"></script>
  <script type="text/javascript" src="/javascript/bbcData.js"></script>
 
@@ -119,6 +119,32 @@ $app_name = idx($app_info, 'name', '');
 
      <script>
         Parse.initialize("5LEqnxjXggAyQZWae2B4l6fCbUFTWny1NfX0Ka7Q", "HlpTncUyPpzJUfYpLgTzkHPQcthMYK8Y9IcHjNvi");
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 'YOUR_APP_ID', // App ID
+            channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+          });
+          FB.api('/me', function(user) {
+            if (user) {
+              var image = document.getElementById('image');
+              image.src = 'https://graph.facebook.com/' + user.id + '/picture';
+              var name = document.getElementById('name');
+              name.innerHTML = user.name
+            }
+          });
+        };
+        // Load the SDK Asynchronously
+        (function(d){
+           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           ref.parentNode.insertBefore(js, ref);
+         }(document));
+
         Controller_init();
        
            /* (function(d, s, id) {
