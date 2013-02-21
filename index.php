@@ -130,7 +130,7 @@ $app_name = idx($app_info, 'name', '');
             xfbml      : true  // parse XFBML
           });
         
-            FB.Event.subscribe('auth.login', function(response) {
+        FB.Event.subscribe('auth.login', function(response) {
           // We want to reload the page now so PHP can read the cookie that the
           // Javascript SDK sat. But we don't want to use
           // window.location.reload() because if this is in a canvas there was a
@@ -138,6 +138,29 @@ $app_name = idx($app_info, 'name', '');
           // user asking if they want to send data again.
           window.location = window.location;
         });
+
+        FB.Event.subscribe('auth.statusChange', function (response) {
+        switch (response.status) {
+            case 'unknown':
+             console.debug('unknown #' );
+            case 'not_authorized':
+                console.debug('Must login!');
+                break;
+            case 'connected':
+                var uid = response.authResponse.userID;
+                var signedRequest = response.authResponse.signedRequest;
+                console.debug('woop! Welcome user #' + uid);
+
+                
+
+                break;
+            default:
+                console.log("Unexpected response from Facebook auth: `" + response.status + "` not recognised!")
+        }
+
+
+      });
+
 
         FB.Canvas.setAutoGrow();
 
